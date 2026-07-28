@@ -1,72 +1,124 @@
-# QuickPass
+# QuickPass — Password Security Analyzer & Generator
 
-QuickPass is a browser-based password security tool designed to help users evaluate password composition and generate strong random passwords.
+QuickPass is a browser-based cybersecurity application that analyzes password characteristics in real time, identifies potentially weak password patterns, and generates cryptographically secure random passwords.
+
+The application was designed as a cybersecurity and software development portfolio project with an emphasis on password security, privacy, secure random generation, and client-side application development.
 
 ## Live Application
 
 QuickPass is deployed using GitHub Pages.
 
-## Features
+## Key Features
 
-- Real-time password analysis
-- 0–100 security score
-- Checks password length
-- Detects uppercase and lowercase characters
-- Detects numbers and special characters
-- Visual password strength indicator
+- Real-time password strength analysis
+- 0–100 security scoring system
+- Password length analysis
+- Uppercase and lowercase character detection
+- Number and special-character detection
+- Common-password detection
+- Detection of predictable keyboard, alphabet, and number sequences
+- Detection of repeated characters
+- Penalties for passwords composed only of letters or numbers
+- Dynamic security recommendations
+- Visual password-strength indicator
 - Show/hide password functionality
-- Secure password generator
+- Secure random password generator
 - One-click password copying
 - Responsive interface for desktop and mobile devices
 - Local browser-based password analysis
 
+## Security-Focused Design
+
+QuickPass evaluates more than basic password complexity requirements.
+
+The scoring algorithm considers password length, character diversity, common passwords, predictable sequences, repeated characters, and other characteristics that can make passwords easier to guess.
+
+Rather than treating every password that contains uppercase letters, lowercase letters, numbers, and symbols as equally secure, QuickPass applies additional scoring and penalties based on password composition.
+
+## Secure Password Generation
+
+QuickPass uses the browser's Web Crypto API through `crypto.getRandomValues()` to obtain cryptographically secure random values.
+
+Generated passwords are shuffled using a Fisher-Yates shuffle backed by cryptographically secure randomness rather than relying on `Math.random()`.
+
+This provides a stronger approach to password generation than standard pseudo-random JavaScript generation.
+
 ## Privacy & Security
 
-QuickPass performs password analysis locally within the user's browser.
+Password analysis occurs locally within the user's browser.
 
 Passwords entered into QuickPass are not intentionally transmitted to a server, saved to a database, or stored by the application.
 
-Users should avoid entering real passwords into unfamiliar password-testing applications.
+Common-password and pattern detection are also performed locally.
+
+Users should still avoid entering real passwords into unfamiliar password-testing applications.
 
 ## Technologies
 
 - HTML5
 - CSS3
 - JavaScript
+- Web Crypto API
 - Git
 - GitHub
 - GitHub Pages
 
 ## How It Works
 
-QuickPass evaluates several password characteristics, including:
+When a password is entered, QuickPass evaluates multiple characteristics and calculates a security score from 0–100.
+
+The application examines:
 
 - Password length
 - Uppercase characters
 - Lowercase characters
 - Numbers
 - Special characters
+- Character-type diversity
+- Known/common passwords
+- Predictable sequences
+- Repeated characters
+- Letter-only and number-only passwords
 
-The application provides immediate feedback as the user modifies the password.
+Based on the resulting score, the password is classified as:
 
-QuickPass also includes a password generator that creates randomized passwords containing multiple character types.
+- Very Weak
+- Weak
+- Moderate
+- Strong
+- Very Strong
 
-## Project Purpose
+QuickPass then provides security feedback explaining areas that may improve the password.
 
-This project was created as a cybersecurity and software development portfolio project demonstrating front-end development, JavaScript programming, security-focused application design, and web deployment.
+## Running the Project Locally
+
+Clone the repository:
+
+git clone https://github.com/KyleBurks1586/QuickPass.git
+
+Open the project directory and launch `index.html` in a modern web browser.
+
+No server, database, or external dependencies are required.
 
 ## Future Improvements
 
-Planned improvements include:
+Potential future enhancements include:
 
-- Improved password-strength scoring
-- Detection of common passwords
-- Detection of repeated and predictable patterns
 - Entropy estimation
-- Customizable password generator
-- Accessibility improvements
+- Larger common-password datasets
+- Detection of additional password patterns
+- Customizable password-generator options
+- Passphrase generation
+- Expanded accessibility support
+- Automated JavaScript testing
 - Additional security recommendations
+
+## Project Purpose
+
+QuickPass demonstrates practical experience with front-end development and security-focused software design, including JavaScript programming, password-analysis logic, cryptographically secure random generation, privacy-conscious application design, Git version control, and web deployment.
 
 ## Disclaimer
 
-QuickPass is an educational security tool. Its password score should not be considered a guarantee of password security.
+QuickPass is an educational cybersecurity tool. Its security score is an estimate based on implemented password characteristics and should not be interpreted as a guarantee that a password cannot be compromised.
+
+Password security also depends on factors such as password uniqueness, credential exposure, authentication controls, and how credentials are stored by the service using them.
