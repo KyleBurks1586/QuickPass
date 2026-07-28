@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickPass | Password Security</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">QUICK<span>PASS</span></div>
+        <div class="subtitle">PASSWORD SECURITY</div>
+    </header>
+
+    <main>
+        <div class="security-card">
+
+            <div class="shield">◆</div>
+
+            <h1>Password Strength Checker</h1>
+
+            <p class="description">
+                Check how resistant your password is to common password attacks.
+                Your password never leaves your device.
+            </p>
+
+            <div class="password-container">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter a password"
+                    autocomplete="off"
+                >
+                <button id="togglePassword" class="show-button">
+                    SHOW
+                </button>
+            </div>
+
+            <div class="strength-section">
+                <div class="strength-heading">
+                    <span>Password Strength</span>
+                    <span id="strengthText">NOT RATED</span>
+                </div>
+
+                <div class="strength-bar">
+                    <div id="strengthFill"></div>
+                </div>
+            </div>
+
+            <div class="requirements">
+
+                <div class="requirement" id="length">
+                    <span class="check">○</span>
+                    At least 12 characters
+                </div>
+
+                <div class="requirement" id="uppercase">
+                    <span class="check">○</span>
+                    Contains an uppercase letter
+                </div>
+
+                <div class="requirement" id="lowercase">
+                    <span class="check">○</span>
+                    Contains a lowercase letter
+                </div>
+
+                <div class="requirement" id="number">
+                    <span class="check">○</span>
+                    Contains a number
+                </div>
+
+                <div class="requirement" id="special">
+                    <span class="check">○</span>
+                    Contains a special character
+                </div>
+
+            </div>
+
+            <div class="score-card">
+                <span>SECURITY SCORE</span>
+                <strong><span id="score">0</span>/100</strong>
+            </div>
+
+            <button id="generateButton" class="generate-button">
+                GENERATE SECURE PASSWORD
+            </button>
+
+            <div id="generatedPassword" class="generated-password hidden">
+                <span id="generatedText"></span>
+                <button id="copyButton">COPY</button>
+            </div>
+
+            <p class="privacy">
+                🔒 Password analysis happens locally in your browser.
+                QuickPass does not store or transmit your password.
+            </p>
+
+        </div>
+    </main>
+
+    <footer>
+        QuickPass • Password Security Tool
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
