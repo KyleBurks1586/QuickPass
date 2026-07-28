@@ -8,6 +8,9 @@ The application was designed as a cybersecurity and software development portfol
 
 QuickPass is deployed using GitHub Pages.
 
+**Try QuickPass:** [Launch the Live Application](https://kyleburks1586.github.io/QuickPass/)
+
+
 ## Key Features
 
 - Real-time password strength analysis
